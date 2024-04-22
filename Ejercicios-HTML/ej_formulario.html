@@ -20,37 +20,37 @@
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
 <form name="formularioIncripcion" id="formulario">
     <p>
-        Nombre:
+        <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" size="40" placeholder="Ingrese Nombre: " maxlength="40">
     </p>
     <p>
-        Apellido:
+        <label for="apellido">Apellido:</label>
         <input type="text" name="apellido" id="apellido" size="40" placeholder="Ingrese Apellido: " maxlength="40">
     </p>
     <p>
         Sexo: <br> <!==br genera un salto de linea==>
-        <input type="radio" name="genero" value="masculino">Masculino
-        <input type="radio" name="genero" value="femenino">Femenino
-        <input type="radio" name="genero" value="noRevelarlo">Prefiero no decirlo
+        <input type="radio" name="genero" value="masculino" id="masculino"><label for="masculino">Masculino</label>
+        <input type="radio" name="genero" value="femenino" id="femenino"><label for="femenino">Femenino</label>
+        <input type="radio" name="genero" value="noRevelarlo" id="prefieronodecirlo"><label for="prefieronodecirlo">Prefiero no decirlo</label>
     </p>
     <p>
-        Edad:
+        <label for="edad">Edad:</label>
         <input type="number" name="edad" id="edad" size="40" placeholder="Ingrese Edad: " maxlength="3" min="0">
     </p>
     <p>
-        Email:
+        <label for="email">Email:</label>
         <input type="email" name="email" id="email" size="40" placeholder="Ingrese Email: " maxlength="40">
     </p>
     <p>
-        Usuario:
+        <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" id="usuario" size="40" placeholder="Ingrese Usuario: " maxlength="40">
     </p>
     <p>
-        Password:
+        <label for="password">Password:</label>
         <input type="password" name="password" id="password" size="40" placeholder="Ingrese Contraseña: " maxlength="40">
     </p>
     <p>
-        Confirmar Password:
+        <label for="confirmpassword">Confirmar Password:</label>
         <input type="password" name="confirmpassword" id="confirmpassword" size="40" placeholder="Repita contraseña: " maxlength="40">
     </p>
     <p>
@@ -63,14 +63,18 @@
     </p>
     <p>
         Tema:
-        <input type="checkbox" name="Politica" id="chkPolitica">Política
-        <input type="checkbox" name="Negocios" id="chkNegocios">Negocios
-        <input type="checkbox" name="Tecnologia" id="chkTecnologia">Tecnología
-        <input type="checkbox" name="Salud" id="chkSalud">Salud
+        <input type="checkbox" name="Politica" id="chkPolitica">
+        <label for="chkPolitica">Política</label>
+        <input type="checkbox" name="Negocios" id="chkNegocios">
+        <label for="chkNegocios">Negocios</label>
+        <input type="checkbox" name="Tecnologia" id="chkTecnologia">
+        <label for="chkTecnologia">Tecnología</label>
+        <input type="checkbox" name="Salud" id="chkSalud">
+        <label for="chkSalud">Salud</label>
     </p>
     <p>
-        Agregue un comentario:
-        <textarea name="Comentario" id="Comentario" rows="5" cols="15">
+        <label for="comentario">Agregue un comentario:</label>
+        <textarea name="Comentario" id="comentario" rows="5" cols="15">
             Ingrese un comentario:
         </textarea>
     </p>
