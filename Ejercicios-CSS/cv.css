@@ -1,0 +1,22 @@
+div{
+    border: 2px solid #b4c5ff;
+    padding: 15px;
+    margin: 10px 40px 5px;
+    background-color: rgba(16, 175, 159, 0.2);
+    border-radius: 10px;
+    box-shadow: -2px -4px #b9d4e8;
+}
+#logo{
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50%;
+}
+.cv{
+    text-align: center;
+    background: linear-gradient(to right, #7a8aac, #9ea4bd);
+}
+h1,h2,h3,h4{
+    font-family: "Playfair Display", serif;
+    text-shadow: 4px 10px #5a7a7e;
+}
