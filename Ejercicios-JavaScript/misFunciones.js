@@ -58,3 +58,28 @@ let mostrarOcultar = (valorMO) =>{
         document.getElementById("divMO").style.display = 'none';
     }
 }
+
+let sumar = () =>{
+    let num1, num2;
+    num1 = Number(document.getElementsByName("sum_num1")[0].value);
+    num2 = Number(document.getElementsByName("sum_num2")[0].value);
+    document.getElementsByName("sum_total")[0].value = num1 + num2;
+}
+let restar = () =>{
+    let num1, num2;
+    num1 = Number(document.getElementsByName("res_num1")[0].value);
+    num2 = Number(document.getElementsByName("res_num2")[0].value);
+    document.getElementsByName("res_total")[0].value = num1 - num2;
+}
+let multiplicar = () =>{
+    let num1, num2;
+    num1 = Number(document.getElementsByName("mul_num1")[0].value);
+    num2 = Number(document.getElementsByName("mul_num2")[0].value);
+    document.getElementsByName("mul_total")[0].value = num1 * num2;
+}
+let dividir = () =>{
+    let num1, num2;
+    num1 = Number(document.getElementsByName("div_num1")[0].value);
+    num2 = Number(document.getElementsByName("div_num2")[0].value);
+    document.getElementsByName("div_total")[0].value = num1 / num2;
+}
