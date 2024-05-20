@@ -4,8 +4,11 @@
  * @param {string} nombre -id del elemento en html
  * @param {number} valor -valor ingresado por el usuario
  */
-convertirUnidades = (nombre, valor) =>{
+let convertirUnidades = (nombre, valor) =>{
     let valMetro, valPulgada, valPie, valYarda;
+    if (valor.includes(",")){
+        valor = valor.replace(",", ".");
+    }
     if (isNaN(valor)){
         alert("El valor ingresado no es un numero");
         valMetro = " ";
@@ -33,10 +36,12 @@ convertirUnidades = (nombre, valor) =>{
         valPie = valor*3;
         valMetro = valor/1.094;
     }
-    document.getElementById("metro").value = valMetro;
-    document.getElementById("pulgada").value = valPulgada;
-    document.getElementById("pie").value = valPie;
-    document.getElementById("yarda").value = valYarda;
+    //primera forma de hacer que tenga dos decimales
+    document.getElementById("metro").value = Math.round(valMetro*100)/100;
+    document.getElementById("pulgada").value = Math.round(valPulgada*100)/100;
+    //segunda forma de hacer que tenga dos decimales
+    document.getElementById("pie").value = valPie.toFixed(2);
+    document.getElementById("yarda").value = valYarda.toFixed(2);
 }
 
 function convertirGR(id){
