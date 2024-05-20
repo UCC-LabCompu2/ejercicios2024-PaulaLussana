@@ -29,3 +29,15 @@ function convertirUnidades(nombre, valor){
         document.getElementById("metro").value = valor/1.094;
     }
 }
+
+function convertirGR(id){
+    if (id==="grados"){
+        let grad = document.getElementById("grados").value;
+        let rad = grad*Math.PI/180;
+        document.getElementById("radianes").value = rad;
+    }else if (id==="radianes"){
+        let rad = document.getElementById("radianes").value;
+        let grad = rad*180/rad;
+        document.getElementById("grados").value = grad;
+    }
+}
