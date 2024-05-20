@@ -44,6 +44,12 @@ let convertirUnidades = (nombre, valor) =>{
     document.getElementById("yarda").value = valYarda.toFixed(2);
 }
 
+/**
+* Convierte un valor ingresado por el usuario en en grados o radianes
+* @method convertirGradosRadianes
+* @param xx
+* @param {number} valor -valor ingresado por el usuario
+*/
 function convertirGR(id){
     if (id==="grados"){
         let grad = document.getElementById("grados").value;
@@ -68,23 +74,23 @@ let sumar = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("sum_num1")[0].value);
     num2 = Number(document.getElementsByName("sum_num2")[0].value);
-    document.getElementsByName("sum_total")[0].value = num1 + num2;
+    document.getElementsByName("sum_total")[0].innerHTML = num1 + num2;
 }
 let restar = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("res_num1")[0].value);
     num2 = Number(document.getElementsByName("res_num2")[0].value);
-    document.getElementsByName("res_total")[0].value = num1 - num2;
+    document.getElementsByName("res_total")[0].innerHTML = num1 - num2;
 }
 let multiplicar = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("mul_num1")[0].value);
     num2 = Number(document.getElementsByName("mul_num2")[0].value);
-    document.getElementsByName("mul_total")[0].value = num1 * num2;
+    document.getElementsByName("mul_total")[0].innerHTML = num1 * num2;
 }
 let dividir = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("div_num1")[0].value);
     num2 = Number(document.getElementsByName("div_num2")[0].value);
-    document.getElementsByName("div_total")[0].value = num1 / num2;
+    document.getElementsByName("div_total")[0].innerHTML = num1 / num2;
 }
