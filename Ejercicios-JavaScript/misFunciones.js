@@ -50,3 +50,11 @@ function convertirGR(id){
         document.getElementById("grados").value = grad;
     }
 }
+
+let mostrarOcultar = (valorMO) =>{
+    if (valorMO==="val_mostrar"){
+        document.getElementById("divMO").style.display = 'block';
+    }else if (valorMO==="val_ocultar"){
+        document.getElementById("divMO").style.display = 'none';
+    }
+}
