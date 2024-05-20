@@ -47,8 +47,6 @@ let convertirUnidades = (nombre, valor) =>{
 /**
 * Convierte un valor ingresado por el usuario en en grados o radianes
 * @method convertirGradosRadianes
-* @param xx
-* @param {number} valor -valor ingresado por el usuario
 */
 function convertirGR(id){
     if (id==="grados"){
@@ -69,32 +67,50 @@ let mostrarOcultar = (valorMO) =>{
         document.getElementById("divMO").style.display = 'none';
     }
 }
-
+/**
+ * Permite sumar dos numero ingresados por el usuario
+ * @method sumar
+ */
 let sumar = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("sum_num1")[0].value);
     num2 = Number(document.getElementsByName("sum_num2")[0].value);
     document.getElementsByName("sum_total")[0].innerHTML = num1 + num2;
 }
+/**
+ * Permite restar dos numero ingresados por el usuario
+ * @method restar
+ */
 let restar = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("res_num1")[0].value);
     num2 = Number(document.getElementsByName("res_num2")[0].value);
     document.getElementsByName("res_total")[0].innerHTML = num1 - num2;
 }
+/**
+ * Permite multiplicar dos numero ingresados por el usuario
+ * @method multiplicar
+ */
 let multiplicar = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("mul_num1")[0].value);
     num2 = Number(document.getElementsByName("mul_num2")[0].value);
     document.getElementsByName("mul_total")[0].innerHTML = num1 * num2;
 }
+/**
+ * Permite dividir dos numero ingresados por el usuario
+ * @method dividir
+ */
 let dividir = () =>{
     let num1, num2;
     num1 = Number(document.getElementsByName("div_num1")[0].value);
     num2 = Number(document.getElementsByName("div_num2")[0].value);
     document.getElementsByName("div_total")[0].innerHTML = num1 / num2;
 }
-
+/**
+ * Pasa de la primera pagina a la segunda
+ * @method pasarPagina
+ */
 let pasarPagina = () =>{
     let cant, unid, urlComp;
     cant = document.getElementById("distancia").value;
@@ -105,7 +121,10 @@ let pasarPagina = () =>{
     urlComp = "segundaWeb.html#" + cant + "#" + unid;
     window.open(urlComp);
 }
-
+/**
+ * Pasa los valores de la primera pagina a la segunda
+ * @method cargarValores
+ */
 let cargarValores = () =>{
     let cantidad, unidad, urlCompleta;
     urlCompleta = window.location.href;
