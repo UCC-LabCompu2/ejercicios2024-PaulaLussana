@@ -94,3 +94,25 @@ let dividir = () =>{
     num2 = Number(document.getElementsByName("div_num2")[0].value);
     document.getElementsByName("div_total")[0].innerHTML = num1 / num2;
 }
+
+let pasarPagina = () =>{
+    let cant, unid, urlComp;
+    cant = document.getElementById("distancia").value;
+    unid = document.getElementsByName("unidades")[0].value;
+
+    console.log(cant);
+    console.log(unid);
+    urlComp = "segundaWeb.html#" + cant + "#" + unid;
+    window.open(urlComp);
+}
+
+let cargarValores = () =>{
+    let cantidad, unidad, urlCompleta;
+    urlCompleta = window.location.href;
+    console.log(urlCompleta);
+    urlCompleta = urlCompleta.split("#");
+    console.log(urlCompleta);
+    cantidad = urlCompleta[1];
+    unidad = urlCompleta[2];
+    document.getElementById("dist").value = cantidad + " " + unidad;
+}
