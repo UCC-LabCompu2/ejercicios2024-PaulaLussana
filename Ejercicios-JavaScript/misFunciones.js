@@ -157,3 +157,19 @@ function cargarLS(){
     const unidad = localStorage.getItem("unidadesLS");
     document.getElementById("dist").value = `${distancia} ${unidad}`;
 }
+
+function dibujarCirculoCuadrado(){
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const xMax = canvas.width;
+    const yMax = canvas.height;
+    ctx.fillStyle = "#ff0bb2";
+
+    const lado = 100;
+    const margen = 10;
+    ctx.fillRect(0+margen, yMax-lado, lado, lado);
+
+    ctx.arc(xMax/2, yMax/2, 50, 0, 2*Math.PI);
+    ctx.fill();
+}
