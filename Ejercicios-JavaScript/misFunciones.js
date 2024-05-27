@@ -197,7 +197,7 @@ function dibujar(event){
     const canvas = document.getElementById("lienzo");
     const ctx = canvas.getContext("2d");
 
-    let posX = event.clientx;
+    let posX = event.clientX;
     let posY = event.clientY;
     console.log(posX, posY);
 
