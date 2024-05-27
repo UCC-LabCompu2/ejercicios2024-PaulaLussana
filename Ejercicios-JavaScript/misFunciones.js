@@ -158,6 +158,10 @@ function cargarLS(){
     document.getElementById("dist").value = `${distancia} ${unidad}`;
 }
 
+/**
+ * Se crean un cuadrado y un circulo y se los ubica dentro del canvas
+ * @method dibujarCirculoCuadrado
+ */
 function dibujarCirculoCuadrado(){
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
@@ -172,4 +176,97 @@ function dibujarCirculoCuadrado(){
 
     ctx.arc(xMax/2, yMax/2, 50, 0, 2*Math.PI);
     ctx.fill();
+}
+
+/**
+ * Carga la funcion dibujar en el lienzo del canvas cuando el usuario mueve el mouse
+ * @method
+ */
+function cargarListeners(){
+    document.getElementById("lienzo").addEventListener("mousemove", dibujar);
+}
+
+var bandera;
+
+/**
+ * Permite dibujar en el canvas cuando se apreta el mouse
+ * @method dibujar
+ * @param event
+ */
+function dibujar(event){
+    const canvas = document.getElementById("lienzo");
+    const ctx = canvas.getContext("2d");
+
+    let posX = event.clientx;
+    let posY = event.clientY;
+    console.log(posX, posY);
+
+    canvas.onmousedown = function (){
+        bandera = true;
+    }
+    canvas.onmouseup = function (){
+        bandera = false;
+    }
+    if(bandera) {
+        ctx.fillStyle = "#043156";
+        ctx.fillRect(posX, posY, 5, 5);
+    }
+}
+
+/**
+ * Borra el contenido del canvas
+ * @method limpiarCanvas
+ */
+function limpiarCanvas(){
+    let canvas = document.getElementById("lienzo");
+    canvas.width = canvas.width;
+}
+
+/**
+ * Borra el contenido del canvas
+ * @method limpiarCanvas
+ */
+function dibujarCuadriculado(){
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const anchoMax = canvas.width;
+    const alturaMax = canvas.height;
+    const paso = 20;
+
+    ctx.strokeStyle = "rgba(37,35,35,0.73)";
+    //dibujar lineas horizontales
+    for (let i = paso; i < alturaMax;) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(anchoMax, i);
+        ctx.stroke();
+        ctx.closePath();
+        i = i+paso;
+    }
+    ctx.strokeStyle = "rgba(37,35,35,0.73)";
+    // dibujar lineas verticales
+    for (let i = paso; i < anchoMax;) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, alturaMax);
+        ctx.stroke();
+        ctx.closePath();
+        i = i+paso;
+    }
+
+    ctx.strokeStyle = "#f60404";
+    //dibujar eje x
+    ctx.beginPath();
+    ctx.moveTo(0,alturaMax/2);
+    ctx.lineTo(anchoMax, alturaMax/2);
+    ctx.stroke();
+    ctx.closePath();
+
+    //dibujar eje x
+    ctx.beginPath();
+    ctx.moveTo(anchoMax/2,0);
+    ctx.lineTo(anchoMax/2, alturaMax);
+    ctx.stroke();
+    ctx.closePath();
 }
