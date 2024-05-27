@@ -135,3 +135,25 @@ let cargarValores = () =>{
     unidad = urlCompleta[2];
     document.getElementById("dist").value = cantidad + " " + unidad;
 }
+
+/**
+ * Permite guardar distancia y unidad en el localStorage
+ * @method guardarLS
+ */
+function guardarLS(){
+    const distancia = document.getElementById("distancia").value;
+    const unidad = document.getElementById("unidades").value;
+    localStorage.setItem("distanciaLS", distancia);
+    localStorage.setItem("unidadesLS", unidad);
+    window.open("2.Web.html");
+}
+
+/**
+ * Toma los valores de distacia y unidad del localStrage para mostrarlos en un input
+ * @method cargarValores
+ */
+function cargarLS(){
+    const distancia = localStorage.getItem("distanciaLS");
+    const unidad = localStorage.getItem("unidadesLS");
+    document.getElementById("dist").value = `${distancia} ${unidad}`;
+}
