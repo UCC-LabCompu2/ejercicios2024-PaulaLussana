@@ -322,3 +322,13 @@ function animarAuto(){
         x = 0;
     }
 }
+
+var intervalID;
+function comenzarAnimacion(){
+    intervalID = setInterval(animarAuto, 15);
+    setTimeout(detenerAuto, 6000);
+}
+
+function detenerAuto(){
+    clearInterval(intervalID);
+}
