@@ -254,7 +254,6 @@ function dibujarCuadriculado(){
         ctx.closePath();
         i = i+paso;
     }
-
     ctx.strokeStyle = "#f60404";
     //dibujar eje x
     ctx.beginPath();
@@ -269,4 +268,40 @@ function dibujarCuadriculado(){
     ctx.lineTo(anchoMax/2, alturaMax);
     ctx.stroke();
     ctx.closePath();
+}
+
+let dibujarImagen = (posX, posY) => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    console.log(posX, posY);
+    const img = new Image();
+    img.src = "images/auto.png";
+
+    canvas.width = canvas.width;
+
+
+    img.onload = function (){
+        var width = this.naturalWidth;
+        var height = this.naturalHeight;
+        console.log(width, height);
+
+        if(posY<0 || posX<0){
+            openDialog();
+        }else if(canvas.width-width<posX || canvas.height-height<posY){
+            openDialog();
+        }else{
+            ctx.drawImage(img, posX, posY);
+        }
+    }
+}
+
+let closeDialog = () => {
+    const dialog = document.getElementById("myDialog");
+    dialog.close();
+}
+
+let openDialog = () => {
+    const dialog = document.getElementById("myDialog");
+    dialog.showModal();
 }
