@@ -28,6 +28,28 @@
             column-gap: 50px;
             margin: 5px;
         }
+        div.transition1{
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+            a:hover.transition1{
+                color: red;
+            }
+            a{
+                transition: color 0.8s linear 0.2s;
+            }
+        }
+        div.transition2{
+                width: 100px;
+                height: 100px;
+                background: red;
+                -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+                transition: width 2s;
+        }
+        div:hover.transition2{
+                width: 300px;
+        }
     </style>
 </head>
 <body style="font-family: Arial, Serif">
@@ -104,6 +126,7 @@
         </div>
     </article>
 </section>
-
+<div class="transition1"></div>
+<div class="transition2"></div>
 </body>
 </html>

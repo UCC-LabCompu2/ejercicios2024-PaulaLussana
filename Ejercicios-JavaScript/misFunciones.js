@@ -305,3 +305,20 @@ let openDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.showModal();
 }
+
+x = 0;
+dx = 2;
+function animarAuto(){
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
+    img.src = "images/auto.png";
+    img.onload = function (){
+        canvas.width = canvas.width;
+        ctx.drawImage(img, x, 100);
+    }
+    x += dx;
+    if (x>canvas.width){
+        x = 0;
+    }
+}
