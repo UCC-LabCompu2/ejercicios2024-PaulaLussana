@@ -333,6 +333,7 @@ function detenerAuto(){
     clearInterval(intervalID);
 }
 
+var animarId;
 function animarAutoNuevo(){
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
@@ -341,10 +342,19 @@ function animarAutoNuevo(){
     img.onload = function (){
         canvas.width = canvas.width;
         ctx.drawImage(img, x, 100);
-        requestAnimationFrame(animarAutoNuevo);
+        animarId = requestAnimationFrame(animarAutoNuevo);
     }
     x += dx;
     if (x>canvas.width){
         x = 0;
     }
+}
+
+function animarNuevo(){
+    setTimeout(cancelarNuevaAnimacion, 6000);
+    requestAnimationFrame(animarAutoNuevo);
+}
+
+function cancelarNuevaAnimacion(){
+    cancelAnimationFrame(animarId);
 }
